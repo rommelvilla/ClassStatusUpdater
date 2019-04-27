@@ -38,5 +38,11 @@ namespace ClassStatusUploader
         {
             await hub.Clients.All.SendAsync("Done", value);
         }
+        [HttpPost]
+        [Route("Working")]
+        public async Task Working([FromBody]TeamStatusChange value)
+        {
+            await hub.Clients.All.SendAsync("Working", value);
+        }
     }
 }
