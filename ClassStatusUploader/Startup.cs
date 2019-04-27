@@ -28,7 +28,7 @@ namespace ClassStatusUploader
                 builder
                     .WithMethods("GET", "POST")
                     .AllowAnyHeader()
-                    .WithOrigins("https://localhost:5001")
+                    .WithOrigins("http://104.211.13.193/")
                     .AllowCredentials();
             }));
             services.AddSignalR();
