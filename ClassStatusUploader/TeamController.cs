@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using ClassStatusUploader.Hubs;
 using ClassStatusUploader.Messages;
 using Microsoft.AspNetCore.Mvc;
@@ -26,18 +23,21 @@ namespace ClassStatusUploader
         {
             await hub.Clients.All.SendAsync("TeamAdded", value);
         }
+
         [HttpPost]
         [Route("Help")]
         public async Task Help([FromBody]TeamStatusChange value)
         {
             await hub.Clients.All.SendAsync("Help", value);
         }
+
         [HttpPost]
         [Route("Done")]
         public async Task Done([FromBody]TeamStatusChange value)
         {
             await hub.Clients.All.SendAsync("Done", value);
         }
+
         [HttpPost]
         [Route("Working")]
         public async Task Working([FromBody]TeamStatusChange value)
