@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ClassStatusUploader.Hubs;
 using ClassStatusUploader.Messages;
@@ -24,7 +23,7 @@ namespace ClassStatusUploader
         public async Task<IEnumerable<string>> Get()
         {
             await hub.Clients.All.SendAsync("TeamAdded", new TeamAddedMessage { Id = Guid.NewGuid(), Name = "yeah" });
-            return new string[] { "value1", "value2" };
+            return new[] { "value1", "value2" };
         }
 
         
